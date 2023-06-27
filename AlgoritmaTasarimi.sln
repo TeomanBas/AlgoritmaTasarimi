@@ -5,7 +5,15 @@ VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "1-Boxing-Unboxing", "1-Boxing-Unboxing\1-Boxing-Unboxing.csproj", "{8638BE04-1C99-4C75-9AFA-AB7C8ECE4406}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2-Sabitler", "2-Sabitler\2-Sabitler.csproj", "{E871A34C-36C3-4DE3-B170-101F437BC44E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "2-Sabitler", "2-Sabitler\2-Sabitler.csproj", "{E871A34C-36C3-4DE3-B170-101F437BC44E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "3-VarUygulamasi", "3-VarUygulamasi\3-VarUygulamasi.csproj", "{392BAF37-3B5C-444F-9C0C-37DECE76F2AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4-Kontrol-Ifadeleri-If-else", "4-Kontrol-Ifadeleri-If-else\4-Kontrol-Ifadeleri-If-else.csproj", "{F7A55A00-EA75-482D-B8F5-F79CCB375C24}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5-Switch-Case", "5-Switch-Case\5-Switch-Case.csproj", "{F150E78B-F208-4356-95E5-A83FD9691A39}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6-TekCift-Uygulamasi", "6-TekCift-Uygulamasi\6-TekCift-Uygulamasi.csproj", "{F5172B4A-A865-4886-99B6-30BEC7444F83}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +29,22 @@ Global
 		{E871A34C-36C3-4DE3-B170-101F437BC44E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E871A34C-36C3-4DE3-B170-101F437BC44E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E871A34C-36C3-4DE3-B170-101F437BC44E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{392BAF37-3B5C-444F-9C0C-37DECE76F2AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{392BAF37-3B5C-444F-9C0C-37DECE76F2AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{392BAF37-3B5C-444F-9C0C-37DECE76F2AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{392BAF37-3B5C-444F-9C0C-37DECE76F2AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7A55A00-EA75-482D-B8F5-F79CCB375C24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7A55A00-EA75-482D-B8F5-F79CCB375C24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7A55A00-EA75-482D-B8F5-F79CCB375C24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7A55A00-EA75-482D-B8F5-F79CCB375C24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F150E78B-F208-4356-95E5-A83FD9691A39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F150E78B-F208-4356-95E5-A83FD9691A39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F150E78B-F208-4356-95E5-A83FD9691A39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F150E78B-F208-4356-95E5-A83FD9691A39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5172B4A-A865-4886-99B6-30BEC7444F83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5172B4A-A865-4886-99B6-30BEC7444F83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5172B4A-A865-4886-99B6-30BEC7444F83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5172B4A-A865-4886-99B6-30BEC7444F83}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
