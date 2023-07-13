@@ -1,7 +1,7 @@
 ﻿internal class Program
 {
     private static void Main(string[] args)
-    {
+    {/*
         Console.WriteLine("matis örnek yapısı");
         Console.WriteLine(new string('-', 23));
         int[,] x= Olustur();
@@ -68,10 +68,40 @@
         Console.WriteLine("matrisin izi : {0,5}", MatrisTrace(trd) == 0 ? "yok çünkü matris köşeden değil" : "hata");
         Console.WriteLine(new string('-', 23));
 
+        
+        Console.WriteLine("bir matirisin traspozunu alır");
+        Console.WriteLine(new string('-', 23));
+        int[,] k = Olustur(3, 2);
+        Yazdir(k);
+        Console.WriteLine();
+        int[,] tk = Transpoz(k);
+        Yazdir(tk);
+        Console.WriteLine(new string('-', 23));
 
+        Console.WriteLine("bir matrisin şekilde değiştirmesi");
+        int[,] sekil1 = Olustur(6, 4);
+        Yazdir(sekil1);
+        int[,] sekil2 =YenidenSekillendir(sekil1, 4, 6);
+        Yazdir(sekil2);
+        Console.WriteLine(new string('-', 23));
+        */
+        Console.WriteLine("iki matrisin karşılaştırması");
+        int[,] matris1 = Olustur(6, 4);
+        Yazdir(matris1);
+        int[,] matris2 = Olustur(6, 4);
+        Console.WriteLine();
+        Yazdir(matris2);
+        Console.WriteLine(new string('-', 23));
+        if(EsitMi(matris2, matris2))
+        {
+            YazdirBasarili("başarılı");
+        }
+        else
+        {
+            YazdirHata("hata");
+        }
 
-
-
+        
 
 
 
@@ -109,6 +139,22 @@
         {
             Console.Write(x[i]+", ");
         }
+    }
+    public static void YazdirHata(string mesaj)
+    {
+
+        Console.BackgroundColor = ConsoleColor.Red;
+        Console.ForegroundColor = ConsoleColor.White;
+        Console.WriteLine("\a\n{0}\n\a",mesaj);
+        Console.ResetColor();
+    }
+    public static void YazdirBasarili(string mesaj)
+    {
+
+        Console.BackgroundColor = ConsoleColor.DarkGreen;
+        Console.ForegroundColor = ConsoleColor.Gray;
+        Console.WriteLine("\a\n{0}\n\a", mesaj);
+        Console.ResetColor();
     }
     public static int[,] SifirMatris(int satir,int sutun)
     {
@@ -193,4 +239,70 @@
 
 
     }
+    public static int[,] Transpoz(int[,] x)
+    {
+        int[,] T = new int[x.GetLength(1),x.GetLength(0)];
+        for (int i = 0;i < T.GetLength(0); i++)
+        {
+            for(int j = 0; j < T.GetLength(1); j++)
+            {
+                T[i,j] = x[j,i];
+            }
+        }
+        return T;
+    }
+    public static int[,] YenidenSekillendir(int[,] x, int yenisatir,int yenisutun)
+    {
+        int[,] Y = new int[yenisatir, yenisutun];
+        int[] D = new int[x.Length];
+        int sayac = 0;
+        if(x.Length== yenisatir*yenisutun)
+        {
+            for (int i = 0; i < x.GetLength(0); i++)
+            {
+                for (int j = 0; j < x.GetLength(1); j++)
+                {
+                    D[sayac] = x[i, j];
+                    sayac++;
+                }
+            }
+            sayac = 0;
+            Yazdir(D);
+            Console.WriteLine();
+            for (int i = 0; i < Y.GetLength(0); i++)
+            {
+                for (int j = 0; j < Y.GetLength(1); j++)
+                {
+                    Y[i, j] = D[sayac];
+                    sayac++;
+                }
+            }
+        }
+        else
+        {
+            Console.WriteLine("hata");
+        }
+        return Y;
+    }
+    public static bool EsitMi(int[,] x, int[,] y)
+    {
+        bool s = true;
+        if(x.GetLength(0) == y.GetLength(0) && x.GetLength(1)==y.GetLength(1))
+        {
+            for(int i = 0;i < x.GetLength(0); i++)
+            {
+                for (int j = 0; j < x.GetLength(1); j++)
+                {
+                    if (x[i, j] != y[i, j])
+                    {
+                        s= false;
+                        break;
+                    }
+                }
+            }
+        }
+
+        return s;
+    }
+    
 }
