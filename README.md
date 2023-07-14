@@ -252,4 +252,42 @@ if(str == null || str.Equals(String.Empty))
 if(str == null || str.Equal(String.Empty) || str.Trim().Equals(String.Empty))
 ```
 - **isNUllOrWhiteSpace(string) :**
-code
+```c#
+if (str == null || str.Equals(String.Empty) || str.Trim().Equals(String.Empty))
+```
+## StreamReader,StreamWriter,FileStream
+### StreamReader
+- Verilerin belirli bir formatta bir dosyaya yazılması,onların kalıcı belleğe aktarılması anlamına gelir.
+- Kalıcı belleğe aktarılan veriler ihtiyaç duyulması halinde okunabilir,güncellenebili yada tamamen silinebilir.
+- Dosyadan okuma yapmak için StreamReader nesnesi kullanılabilir.
+- Bu nesne tanımlandığında  okunacak dosyanın fiziksel konum bilgisini de parametre olarak almalıdır.
+- Dosyalama işlemlerinin bir try-catch bloğu içinde yapılması etkili hata yönetimi için tavsiye edilmektedir.
+### StreamWriter
+- Bir dosyaya yazma yapmak için StreamWriter nesnesi kullanılabilir.
+- Bu nesne tanımlandığında  okunacak dosyanın fiziksel konum bilgisini de parametre olarak almalıdır.
+- Dosyalama işlemlerinin bir try-catch bloğu içinde yapılması etkili hata yönetimi için tavsiye edilmektedir.
+
+### FileStream
+- FileStream sınıfı Stream sınıfından kalıtım tekniğiyle türetilmiş bir sınıftır.
+```c#
+FileStream fs = new FileStream(dosyayol,
+FileMode.Append,
+FileAccess.Write,
+FileShare.Note);
+```
+- FileStream tanımı yapılırken:
+   - FileMode: (Create,CreateNew,Append,Open,OpenOrCreate,Truncate)
+   - FileAccess: (Read,Write,ReadWrite)
+   - FileShare: (None,Read,Write,ReadWrite) belitilebilir.
+- FileStream tanımına bağlı olarak yazma ve okuma gibi yetkilerin olup olmadığı kontrol edilebilir.
+```c#
+//fs.canRead,canWrite, ... 
+if(fs.canRead){
+   ...
+}
+```
+- Açılan bir FileStream nesnesi için kapatma işlemi uygulanmalıdır ki yazma işlemi gerçekleşebilsin.
+```c#
+// yazma islemini tamamlamak için gereklidir.
+fs.Close();
+```
