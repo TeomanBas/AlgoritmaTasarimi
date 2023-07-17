@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="_27_AracUygulamasi.Arac">
+    <Position X="1.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAABAAAAAFEAAAQRAAAIAAAAAAAAgAAAAIAAA=</HashCode>
+      <FileName>Arac.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="_27_AracUygulamasi.Tasit">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAACAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Tasit.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="_27_AracUygulamasi.Motor">
+    <Position X="4" Y="3.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAAABAAAARAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Tasit.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="_27_AracUygulamasi.Renk">
+    <Position X="6.25" Y="3.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAgAAAAIAE=</HashCode>
+      <FileName>Tasit.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

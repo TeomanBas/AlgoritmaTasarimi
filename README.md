@@ -291,3 +291,358 @@ if(fs.canRead){
 // yazma islemini tamamlamak için gereklidir.
 fs.Close();
 ```
+## OOP (Object Oriented Programing)
+C# saf bir nesne yönelimli programlama dili değildir. C# çoklu programlama paradigmasına da aynı zamanda dayanmaktadır, fonksiyonel programlamayıda desteklemektedir.Ancak nesne yönelimli programlama c# için önemli bir kavramdır ve c# tarafından önerilen tüm kütüphaneler için çekirdek/temel bir kavramdır.
+
+### Temel Kavramları
+1. Abstraction
+2. Encapsulation
+3. Inheritance
+4. Polymorphism
+
+### Classes
+- Sınıflar çeşitli standart ve özel üyeler içerir.
+- Bazen bu üyeler static de olabilir.
+- Bir sınıfa ait üye eğer static deyimi ile tanımlanmış ise sınıfın bir örneğinin türetilmesine gerek kalmadan doğrudan sınıf üzerinden çağrılabilir.
+- Bir başka ifadeyle bir static üye sınıfa aitken; diğer örnekler üye nesneye aittir.Bir static alan için alanın değeri tüm nesneler için aynıdır.Ancak bir örnek alanı için nesne farklı bir değere sahiptir.
+#### Partial Class
+- **Partial** anahtar kelimesi class,struct,method yada interface gibi yapıların birden çok dosyaya yayılmasına izin verir.
+- **örnekler**
+   ```c#
+   namespace AlgoritmaTasarimi
+   {
+      partial class Veri
+      {
+         public Veri(string veri)
+         {
+
+         }
+      }
+   }
+   ```
+   **veri1.cs**
+   ```c#
+   using AlgoritmaTasarimi;
+
+   namespace AlgoritmaTasarimi
+   {
+      partial class Veri
+      {
+         public Veri(string veri,string veri2)
+         {
+
+         }
+      }
+   }
+   ```
+   **veri2.cs**<br>
+   örneklerde görüldüğü gibi aynı namespace içerisinde farklı dosyalarda tanımlanmış ve aynı class ismine ve **partial** tanımlamalarına sahip class yapıları çalışırken tek bir class,tek bir dosya gibi davranırlar.bunun için `using AlgoritmaTasarimi` şeklinde namespace'leri birbirlerinin içlerine dahil etmek gerekir.Bu yapı bize classları tasarlarken ve kullanılanırken esneklik sağlar.
+   
+### Class Members
+#### 1. Fields
+   - Alanlar (fields) kabaca sınıfla ilişkili olan değişkenleri temsil ederler ve private düzenleyicisi ile kullanılırlar.
+   - Alanlara eklenen iki özel fonksiyon ise Property oluşturmak için kullanılır.
+   - Bu fonksiyonlar yazma ve okuma işleminin yapılmasını sağlayan set ve get metotlarıdır.
+   ```c#
+   public class Musteri
+   {
+      private string _adi;
+      public string Adi{
+         get{
+            return _adi;
+         }
+         set{
+            _adi =value;
+         }
+      }
+   }
+   ```
+   **Expression-bodied property**
+   ```c#
+   public class Musteri
+   {
+      private string _adi;
+      public string Adi
+      {
+         get => _adi;
+         set => _adi = value;
+      }
+   }
+   ```
+   - **Auto-Implemented Property**
+      - Eğer property'nin erişimcileri olan set ve get metotları içerisinde herhangi bir mantık/kural yok ise bu durumda auto-implemented property kullanılabilir.
+      - Burada özel bir alanın (field) tanımlanmasına gerek yoktur.
+      - Derleyici bunu otomatik olarak yapabilmektedir.
+      - Bu durumda, auto-implemented properties ile tanımlanmış bir peroperty'nin ilgili alanına derleyicinin oluşturduğu otomatik ismi bilmediğiniz sürece erişemezsiniz.
+      ```c#
+      public class Musteri
+      {
+         private string _adi;
+         public string Adi
+         {
+            get => _adi;
+            set => _adi = value;
+         }
+         public int Yas 
+         {
+            get;
+            set;
+         }
+      }
+      ```
+   - **Abstraction**
+      - Bu örnekte bir öğrencinin notunun yazma sırasında 0'dan küçük ve 100'den büyük olma durumu set ve get erişimcilerinin içerisinde engellenmiştir.Böyle bir durumda kullanılan _not alanı yada bir başka ifadeyle _not değişkeni Not property için destek değişkeni(backing variable) olarak isimlendirilir.
+         ```c#
+         public class Ogrenci
+         {
+            public int Not
+            {
+               get
+               {
+                  if (_not > 100)
+                     return 100;
+                  else if (_not < 0)
+                     return 0;
+                  else
+                     return _not;
+               }
+               set
+               {
+                  if (_not > 100)
+                     _not =_100;
+                  else if (_not < 0)
+                     _not = 0;
+                  else
+                     _not = value;
+               }
+            }
+         }
+         ```
+   - **Property Accessors**
+      - c# set ve get erişimcileri için farklı düzenleyiciler sunar.Bu bir property için public olarak yada private olarak yazma okuma işlemlerinin yapılabileceği anlamına gelir.
+      ```c#
+      public class Ogrenci
+      {
+         private string _adi;
+         public string Adi
+         {
+            get => _adi;
+            private set => _adi= value;
+         }
+      }
+      ```
+   - **Readonly Property**
+      - lambda expression ifadesiyle sadece get properties tanımlanmış `_adi` fields sadece okuma işlemi için kullanılabilir, bir değer tanımlandı ise dışarıdan değiştirilemez.
+      - Benzer şekilde sadece yazılabilir bir perperty de get özelliği devre dışı bırakılarak oluşturulabilir.
+      - Fakat böyle bir tanımlama çok anlamlı olmayacaktır.
+      - Böyle bir durumda sadece yazılabilir bir özellik tanımlamaktansa metot kullanımı daha doğru bir yaklaşım olacaktır. 
+      ```c#
+      public class Ogrenci
+      {
+         private string _adi;
+         public string Adi
+         {
+            get => _adi;
+         }
+      }
+      ```
+   - **Auto-Implemented Read-Only Properties**
+      - c# sadece okunabilir değişkenleri tanımlamak için Auto-Implemented Read-Only Properties niteliği de sunmaktadır.
+      ```c#
+      public class Ogrenci
+      {
+         public string Id { get; } = Guid.NewGuid().ToString();
+      }
+      ```
+   - **Expression-bodied Method**
+      - c# dilinde expression-bodied method niteliği expression-bodied property içinde geçerlidir.
+      - Bu durumda return deyiminin kullanılmasına gerek kalmamaktadır.
+      - Aynı zamanda get anahtar sözcüğü de bu durumda kullanılmayabilir.
+      - Lambda ifadesiyle tanım kolayca gerçekleştirilebilir.
+      ```c#
+      public class Kisi
+      {
+         public Kisi(string adi,string soyadi)
+         {
+            Adi = adi;
+            Soyadi = soyadi;
+         }
+         public string Adi { get; }
+         public string Soyadi { get; }
+         public string AdiSoyadi => $"{Adi} {Soyadi}";
+      }
+      ```
+   - **Anonymous Types**
+      -  Anonim türler genellikle var anahtar sözcüğü ile tanımlanır.
+      - var sözcüğü new anahtar kelimesiyle birlikte kullanıldığında bir anonymous type tanımı gerçekleştirilir.
+      ```c#
+      static void Main(string[] args)
+      {
+         var Araba = new
+         {
+            Marka = "Skoda",
+            Model = 2019,
+            Renk = "Gri"
+         };
+         Console.WriteLine(Araba.ToString()); 
+      }
+      ```
+#### 2. Constant
+#### 3. Methods
+   - c# terminolojisi metotlar ve fonksiyonlar arasında küçük bir farklılığa sahiptir.c# terminolojisinde `işlem üyesi - function member` terimi sadece yöntemleri değil aynı zamanda bir sınıfın veya yapının diğer veri olmayan (nondata) üyelerini de içerir.Bu indeksler (indexer), operatörler (operators), yapılandırıcılar (constructors), yok ediciler(deconstructors) ve belki özellikleri kapsayabilir.
+   - Eğer bir metodun uygulanması sadece bir deyimi içeriyorsa c# bunun için basit bir söz dizilimi sağlar ve bu dizilim Expression-bodied methods olarak ifade edilir.Bu durumda süslü parantezler,`return` deyimi gibi ifadelerin kullanılmasına gerek kalmaz.`=>` operatörü ifadenin sol ve sağ taraflarının birbirinden ayrılmasını sağlar.
+   **syntax**
+   ```
+   [modifiers] return_type MethodName([parameters])
+   {
+      // method body
+   }
+   ```
+   - **Expression-bodied method**
+      - **klasik metod tanımı**
+      ```c#
+      public bool KareMi(int x,int y)
+      {
+         return (x == y);
+      }
+      ```
+      - **expression-bodied methods uygulaması**
+      ```c#
+      public bool KareMi(int x,int y) => x==y;
+      ```
+   - **Method overloading**
+   - c# methodların aşırı yüklenmesi (method overloading) destekler
+   - bir metodun farklı imzalar taşıyan versiyonları var ise ilgili metodun aşırı yüklendiği ifade edilir.
+   - **expression-bodied method şeklinde bir metod üç tane overloading yapısı**
+      ```c#
+      public bool EsitMi(int x, int y) => x == y;
+      public bool EsitMi(double x, double y) => x == y;
+      public bool EsitMi(string x, string y) => x.Equals(y);
+      ```
+   - **Optional arguments**
+      - Metot tanımlarında parametreler bazen tercihe bağlı olarak sunulabilir
+      - Bu durumda ilgili parametreler için varsayılan değerler tanımlanması gerçekleştirilebilir.
+      - 
+         ```c#
+         public bool EsitMi(int x=1, int y=1) => x == y;
+         public bool EsitMi(string x="true", string y="true") => x.Equals(y);
+         ```
+   - **Extension Method**
+      - Bir sınıfı genişletmenin yollarından birisi extension methods kullanımıdır.
+      - Kalıtım(inheritance) bir uygulamaya fonksiyonellik kazandıran yöntemlerden biridir, buna alternatif olarak veya kalıtım kullanılmadığında extension methods lar kullanabilir.
+      - Extension method kullanımı da yine bir sınıfı genişletmek için tercih edilebilecek yollar arasındadır.
+      - Extension methods'lar sınıfın kaynak kodunda bulunmayadan bir sınıfın parçası gibi görünebilen static yöntemlerdir.
+      - Derleyici **this** anahtar kelimesiyle özel bir tür için extension method yazıldığını anlayabilmektedir.
+         ```c#
+         public static class StringExtension
+         {
+            public static int KelimeSayisi(this string s) => s.Split().Length;
+         }
+         internal class Program
+         {
+            private static void Main(string[] args)
+            {
+               string metin = "merhaba dünya";
+
+               Console.WriteLine($"{metin.KelimeSayisi()}");
+            }
+         }
+         ```
+   - **Virtual Methods**
+      - virtual olarak bildirilmiş bir temel sınıf (base class) metodu,
+      temel sınıftan türetilen sınıflarda overriden(ezilebilir, gereçsiz kılınabilir) edilebilir, bu izin ilgili metot için verilir.
+      - Virtual anahtar kelimesi metotlar için kullanılabildiği gibi property'ler için de kullanılabilir.
+      - Temel bir sınıfın metotları override edildiğinde metotların imzaları ve geri dönüş türleri olduğu gibi eşleşmelidir.
+      - Fields ve static fonksiyonlar virtual olarak tanımlanmaz.
+      - kalıtım bir bir sınıftan türetilen bir sınıfın türetildiği sınıftan gelen bir metodu override edebilmesi kendisine has bir override metodu yazabilmesi türetildiği sınıfta metod virtual olarak tanımlamış olması gereklidir.
+      ```c#
+      public virtual void Ciz() => Console.WriteLine($"Sekil {Pozisyon} - {Boyut}");
+      ```
+   - **Polymorphism**
+      - Polimorfizmde çağrılan yöntem derleme zamanı sırasında değil , çalışma zamanında dinamik olarak tanımlanır.
+      - Derleyici bir sanal metot tablosu (vtable) oluşturur ki bu tablo çalışma zamanı sırasında çağrılabilecek metotların bir listesini içerir ve derleyici çalışma zamanında type (tip) dikkate alarak ilgili metotları çağırır.
+   - **Calling Base Version of Methods**
+      - c# temel sınıfta yer alan bir metodu çağırmak üzere özel bir söz dizilimine sahiptir.
+      `base.<MethodName>`
+      - Bu şekilde herhangi bir metodu override etmeden temel sınıftan çağırmak mümkündür.
+   - **Abstract Classes and Methods**
+      - c# sınıf ve metotların abstract olarak tanımlanmasına izin verir.
+      - Soyut bir sınıf somutlaştırılamaz.
+      - Yani abstract bir sınıftan yeni sınıflar türetilebilir ancak nesne üretilemez.
+      - Eğer bir metot abstract anahtar sözcüğü ile tanımlanış ise implementation(uygulaması yani gövdesi) yoktur implementation türtilen sınıf içerisinde override edilirken oluşturulur. abstract olmayan bir sınıfta override edilmesi gerekir bu bir zorunluluktur.
+      - Bir abstract metot otomatik olarak zaten virtual deyimine sahip olmuş oluyor ve tekrar virtual anahtar sözcüğünün tanımlanma noktasında kullanılması gerekmez.
+      - Eğer bir sınıf abstract bir metot içeriyorsa, sınıf tanımında da abstract deyimi kullanılmalıdır.
+   - **Sealed Classes and Methods**
+      - Bir sınıftan yeni sınıflar türetilmesi engellenmek istendiğinde bu sınıf `sealed` anahtar sözcüğü ile tanımlanmalıdır.
+      - sealed anahtar sözcüğünün bir sınıfa eklenmesi bu sınıftan artık alt sınıfların üretilemeyeceği/türetilemeyeceği anlamına gelir.
+      - sealed anahtar sözcüğü bir metoda eklendiği zaman ise bu artık ilgili metodun override edilemeyeceğini ifade eder.
+      - sealed anahtar sözcüğü bu kapsamda mühürleme - kapatma şeklinde algılanabilir.
+      - Kod parçası üzerinden yapılacak türetmelere bağlı olarak yürütülecek işlemlerde hataların ortaya çıkma ihtimali söz konusu olduğunda bu anahtar sözcük kullanılabilir.
+      - sealed class kullanımının nedenlerinden birisi bir sealed class tanımlandığında derleyici bilir ki ilgili sınıftan türetme yapmak engellenmiştir.Derleyici tarafından oluşturulan sanal tabloda sanal metotlar azaltılabilir ve elemine edilebilir.
+      - Bu durumda performansta bir artış sağlanacaktır.
+      - örneğin string sınıfı sealed class'tır.Bu sınıfın sealed yapılarak olası en yüksek performası sağlaması hedeflenmiştir.
+      - Peki yinede biz bu class ı genişletmek istersek extension metotlar ve this ifadesi kullanılabilir.
+#### 4. Properties
+#### 5. Constructor
+   - Temel Yapılandırıcıların bildirilmesi için söz dizilimi de bir metot gibidir.
+   - Yapılandırıcı metot adı sınıf adı ile aynı olmalıdır.
+   - Bir yapılandırıcı metodun geri dönüş tipi aslında sınıfın kendisini ifade ettiğinden geri dönüş tipi belirtilmez.
+   - Yapılandırıcı metotlar da aşırı yüklenebilir.
+   - Yapılandırıcı metotlar sınıfın bir örneği oluşturulduğunda otomatik olarak çalışırlar.
+   - Yapılandırıcı metot için access modifier ifadelerinin kullanımı anlamsızdır. çünkü zaten bu constructor kullanıldığında bir nesne oluşturuluyor ve bu nesne üzerinden erişim sağlanıyor ve fields'ler de zaten access modifier tanımları yer alıyor yani access modifier kullanımı bu kısımda bu yüzden anlamsız olmuş oluyor.
+   - **expression-bodied with constructor örneği**
+      ```c#
+      class Kisi
+      {
+         Kisi(string adi) => Adi = adi;
+      }
+      ```
+   - Eğer bir yapılandırıcı method sadece tek bir ifadeden oluşuyorsa yapılandırıcı metot expression-bodied şeklinde uygulanabilir.
+   - Constructor yapısıyla ilgili olarak bir diğer konu türetilmiş sınıflarda (inheritance) constructor yapısının kullanılmasıdır;bu durumda hiyerarşik bir yol izlenir.
+   - **Constructors of Derived Classes**
+      - Burada en önemli ve dikkat çekici nokta bir hiyerarşiye sahip olan yani başka bir sınıftan türetilmiş olan sınıfların yapılandırıcılarının nasıl çalıştığıdır.
+      - Bir sınıftan türetilmiş olan sınıf içni yapılandırıcı yazıldığında yapılandırıcının kontrolü ele alınır.
+      - Birden başka ifadeyle,türetilmiş bir sınıftan bir nesne üretildiğinde birden fazla yapılandırıcının çalışağınında farkında olmak gerekir.
+      - Türetilmiş sınıf aynı zamanda base class'ın da yapılandırıcı metodunu çağıracaktır.
+      - Türetilmiş sınıflardan bir nesne üretildiğinde ilk olarak `object` yapılandırıcısı çalışacaktır ve hiyerarşi aşağıya doğru takip edilecektir.
+      - Her yapılandırıcı kendi alanları (fields) üzerinde işlem gerçekleştirecektir.
+      - üst sınıflardaki constructorları override etmek için alt sınıfta tanımlalan örnek constructor yapısı
+         ```c#
+         //base class taki contructor ezilmiş oldu
+        public Dikdortgen(int genislik, int yukseklik, int x, int y) : base(genislik-5, yukseklik-5, x-2, y-6)
+        {
+            Console.WriteLine("Derived class -> ctor - 4p");
+        }
+         ```
+#### 6. Indexer
+#### 7. Operators
+#### 8. Events
+#### 9. Destructors
+#### 10. Types
+
+
+### interfaces
+- Bir interface yapısında sınıf türetmek daha önce imzası tanımlanmış olan metotların implemente edilmesi anlamına gelir. Tüm nesne yönelimli diller inteface yapısını desteklemez.Genel olarak interface yapısı sadece methods,properties,indexer ve events'ların deklarayonunu içerir.
+- Bir abstract sınıf implementasyonlar veya implementasyonu olmayan üyeler içerir.
+- Ancak interface yapısı, hehangi bir implementasyon içermez,yani tamamen soyuttur.
+- Çünkü interface yapısının üyeleri her zaman abstract şeklinde tanımlanır.
+- Bununla birlikte abstract deyimi interface için gerekli değildir.
+- Abstract sınıflarda olduğu gibi interface üzerinden somutlaştırma,yani nesne üretme, yapılamaz.
+- interface yapısı sadece iyelerinin imzalarını taşır.
+- interface yapısı ne constructor nede field üyelerine sahip değildir.
+- interface yapısı operatör aşırı yükleme (operator overloading) yapısına da izin vermez.
+- access modifier kullanımına izin verilmez
+- interface iyeleri her zaman pubic olarak tanımlanır ve virtual olarak deklare edilemezler.
+- İnterface tanımlanırken ismi büyük "I" harfi ile başlamalıdır.Bu bir yaklaşım yani "I" harfi olmak zorunda değil ancak interfece olduğunun anlaşılması için bu yaklaşım benimsenmiş durumda.
+### Types of inheritance
+#### Single inheritance
+Bir sınıftan başka bir sınıfın türetilmesidir.örnek arac,taşıt uygulaması
+#### Multiple inheritance
+Bir sınıfın birden fazla temel sınıftan üretilmesidir.c# multiple inheritance sınıflar için desteklemez ancak interface yapıları için buna izin verir.
+#### Multilevel inheritance
+Bir sınıftan türetilen sınıftan başka bir sınıfın daha türetilmesidir.Hiyerarşik bir şekilde kalıtımın yapılmsıdır.c# multilevel inheritance desteklemekte ve sıklıkla kullanmaktadır.
+#### İnterface inheritance
+interface inheritance kalıtımın interface yapısı ile uygulanmasını ifade eder.Buna multiple inheritance mümkündür.
+
+## Collections
+![collectionhierarrchy](./img/CollectionHierarchy.png)
