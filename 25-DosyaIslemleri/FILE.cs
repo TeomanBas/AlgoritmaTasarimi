@@ -10,6 +10,15 @@ namespace _25_DosyaIslemleri
     {
         public string FizikselYol(string dosyaad)
         {
+            // Klasör oluşturmak
+            // Directory.CreateDirectory("dosya");
+            // Klasörü silmek
+            // Directory.Delete("dosya");
+            // Klasör kontrolü
+            // Directory.Exists("dosya");
+            // Klasörün taşınması
+            // Dirextory.Move("dosya");
+            
             // dinamik yol tanımı
             string[] yol = Directory.GetCurrentDirectory().Split('\\');
             string dosyayol = "";
@@ -22,6 +31,11 @@ namespace _25_DosyaIslemleri
         }
         public static void DosyaOkuma()
         {
+            // dosya açmak için OpenText() metodu kullanılır.
+            // StreamReader sr = File.OpenText("deneme.txt");
+            // ReadLine() ile satır okuması gerçekleşir ReadLine() cursor mantığında çalışır.
+            // ReadAllText() ile tüm dosya içeriğini string değişkenine alır
+
             try
             {
                 //dinamik konum: length değerinden -3 eleman çıkartılmasaydı exe dosyasının çalıştığı dizini işaret edecekti.
@@ -50,6 +64,16 @@ namespace _25_DosyaIslemleri
         }
         public static void DosyaYazma()
         {
+            // Dosya StreamWriter sınıfından bir nesne oluşturularak Yazma modunda açılabilir
+            // StreamWriter sw = File.CreateText("deneme.txt");
+            // sw.WriteLine("deneme yazısı");
+            // Dosyanın içeriğinin silinmemesi ve üzerine eklenmesi için nesne File.AppendText() ile oluşturulmalıdır.
+            // File.WriteAllText("deneme.txt,"deneme yazısı") metoduyla da dosya ya yazılabilir ancak içerik tamamen silinir.
+            // File.AppendAllText("deneme.txt","deneme yazısı") AppendAllText metoduyla veriler son satıra eklenir .
+            // dosyaya yazma işlemi yapıldıktan sonra dosya kapatılmalıdır.
+            // sw.Close();
+            // Bu şekilde 
+
             try
             {
                 // dinamik yol tanımı
@@ -77,5 +101,8 @@ namespace _25_DosyaIslemleri
                 Console.WriteLine("hata");
             }
         }
+
+
+
     }
 }

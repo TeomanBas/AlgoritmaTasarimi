@@ -8,17 +8,39 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        
-        // dosya kopyalamak için dizinler 
-        FILE_ISLEMLERI filenesne = new FILE_ISLEMLERI();
-        string kaynak= filenesne.FizikselYol("deneme.txt");
-        string hedef = filenesne.FizikselYol("deneme_kopyası.txt");
-        //DosyaKopyala(kaynak,hedef);
-        DosyaSil(hedef);
-        DosyaSil(kaynak);
-        
+        //// dosya kopyalamak için dizinler 
+        //FILE_ISLEMLERI filenesne = new FILE_ISLEMLERI();
+        //string kaynak= filenesne.FizikselYol("deneme.txt");
+        //string hedef = filenesne.FizikselYol("deneme_kopyası.txt");
+        ////DosyaKopyala(kaynak,hedef);
+        //DosyaSil(hedef);
+        //DosyaSil(kaynak);
+        //TemelKlasorIslemleri();
+        Console.ReadLine();
+
+        static void TemelKlasorIslemleri()
+        {
+
+            // exe nin çalıştığı dizinin path bilgisine erişir
+            string rootPath = Directory.GetCurrentDirectory();
+            // path içerisindeki klasör bilgileri
+            string[] files = Directory.GetFiles(rootPath, "*", SearchOption.AllDirectories);
+
+            foreach (string file in files)
+            {
+                Console.WriteLine(file);
+                // Dosya uzantısı
+                Console.WriteLine(Path.GetExtension(file));
+                // dosya adı
+                Console.WriteLine(Path.GetFileNameWithoutExtension(file));
+                Console.WriteLine(Path.GetFileName(file));
+                Console.WriteLine("--------------------------");
 
 
+
+
+            }
+        }
     }
     public static void FileStreamUygulamasi()
     {
