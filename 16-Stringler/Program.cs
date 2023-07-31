@@ -21,7 +21,8 @@
         Console.WriteLine("ifadenin harflerinin büyütülmesi ToUpper #### {0}", ifade.ToUpper());
         Console.WriteLine("ifade içerisinki e karakterlerinin a ya dönüştürülmesi replace edilmesi #### {0}", ifade.Replace('e','a'));
 
-
+        Console.WriteLine("-----------------------");
+        Kelime("kelime1", "kelime2");
 
 
     }
@@ -68,5 +69,11 @@
                 Console.WriteLine("{0,20}{0}", new string(desen, i), new string(desen, i));
             }
         }
+    }
+    public static void Kelime(string kelime1,string kelime2)
+    {
+        // dönüş değişkeni oluşturulmak bazen gereksiz olabilir Bunun için String.Format() kullnılabilir.
+        string kelimeler = String.Format("{0}{1}", kelime1, kelime2);
+        Console.WriteLine(kelimeler);
     }
 }
