@@ -67,11 +67,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "31-AbstractClassesAndMethod
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "32-SealedClassesAndMethods", "32-SealedClassesAndMethods\32-SealedClassesAndMethods.csproj", "{F444BC48-596B-46EB-A385-DD0676B5FD14}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "33-ConstuctorOfDerivedClasses", "33-ConstuctorOfDerivedClasses\33-ConstuctorOfDerivedClasses.csproj", "{6ABCF6AE-71BA-4C8B-80FB-C5AB8A622934}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "33-ConstuctorOfDerivedClasses", "33-ConstuctorOfDerivedClasses\33-ConstuctorOfDerivedClasses.csproj", "{6ABCF6AE-71BA-4C8B-80FB-C5AB8A622934}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "34-Interface", "34-Interface\34-Interface.csproj", "{C1120076-3008-4297-9892-558B02DA260E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "34-Interface", "34-Interface\34-Interface.csproj", "{C1120076-3008-4297-9892-558B02DA260E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "35-Collection", "35-Collection\35-Collection.csproj", "{ADEFF25B-A3F5-4087-8EC6-CD1C52B709FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "35-Collection", "35-Collection\35-Collection.csproj", "{ADEFF25B-A3F5-4087-8EC6-CD1C52B709FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "36-ExceptionHandling", "36-ExceptionHandling\36-ExceptionHandling.csproj", "{9FA8F6DB-5A1C-41C4-B6F3-AE261A7F0E3B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -219,6 +221,10 @@ Global
 		{ADEFF25B-A3F5-4087-8EC6-CD1C52B709FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ADEFF25B-A3F5-4087-8EC6-CD1C52B709FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ADEFF25B-A3F5-4087-8EC6-CD1C52B709FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FA8F6DB-5A1C-41C4-B6F3-AE261A7F0E3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FA8F6DB-5A1C-41C4-B6F3-AE261A7F0E3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FA8F6DB-5A1C-41C4-B6F3-AE261A7F0E3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FA8F6DB-5A1C-41C4-B6F3-AE261A7F0E3B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
