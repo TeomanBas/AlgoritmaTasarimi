@@ -1,4 +1,6 @@
-﻿using _34_Interface;
+﻿using System.Collections.Generic;
+using _34_Interface;
+
 
 internal class Program
 {
@@ -10,7 +12,7 @@ internal class Program
         MevduatHesabi.Cek(500);
         Console.WriteLine(MevduatHesabi.ToString());
 
-        Console.WriteLine(new string('-',50));
+        Console.WriteLine(new string('-', 50));
 
         IBankaHesap mevduatHesabi2 = new MevduatHesabi();
         ITransfer aktifHesap = new AktifHesap();
@@ -18,5 +20,12 @@ internal class Program
         aktifHesap.Yatir(5000);
         aktifHesap.TransferYap(mevduatHesabi2, 200);
         Console.WriteLine(aktifHesap.ToString());
+
+        Console.WriteLine("------------------------------------------------------");
+        Customer customer1 = new Customer();
+        customer1.Id = 1234;
+        PersonManager personManager1 = new PersonManager();
+        personManager1.Add(customer1);
+        
     }
 }

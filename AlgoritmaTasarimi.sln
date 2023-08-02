@@ -75,7 +75,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "35-Collection", "35-Collect
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "36-ExceptionHandling", "36-ExceptionHandling\36-ExceptionHandling.csproj", "{9FA8F6DB-5A1C-41C4-B6F3-AE261A7F0E3B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "37-DamaTahtasi", "37-DamaTahtasi\37-DamaTahtasi.csproj", "{21E0846B-739A-43FB-9E29-3FFB77463B06}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "37-DamaTahtasi", "37-DamaTahtasi\37-DamaTahtasi.csproj", "{21E0846B-739A-43FB-9E29-3FFB77463B06}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "34-1-Interface", "34-1-Interface\34-1-Interface.csproj", "{90D59DDD-3785-421A-BBE2-E5C3E98AB0D8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -231,6 +233,10 @@ Global
 		{21E0846B-739A-43FB-9E29-3FFB77463B06}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21E0846B-739A-43FB-9E29-3FFB77463B06}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{21E0846B-739A-43FB-9E29-3FFB77463B06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90D59DDD-3785-421A-BBE2-E5C3E98AB0D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90D59DDD-3785-421A-BBE2-E5C3E98AB0D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90D59DDD-3785-421A-BBE2-E5C3E98AB0D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90D59DDD-3785-421A-BBE2-E5C3E98AB0D8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
