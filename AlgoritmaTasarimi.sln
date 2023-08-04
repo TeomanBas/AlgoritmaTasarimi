@@ -77,7 +77,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "36-ExceptionHandling", "36-
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "37-DamaTahtasi", "37-DamaTahtasi\37-DamaTahtasi.csproj", "{21E0846B-739A-43FB-9E29-3FFB77463B06}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "34-1-Interface", "34-1-Interface\34-1-Interface.csproj", "{90D59DDD-3785-421A-BBE2-E5C3E98AB0D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "34-1-Interface", "34-1-Interface\34-1-Interface.csproj", "{90D59DDD-3785-421A-BBE2-E5C3E98AB0D8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "38-Inheritance", "38-Inheritance\38-Inheritance.csproj", "{C60EF57D-0CAA-45FF-B125-B7709BBD5232}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "28-1-VirtualMethods", "28-1-VirtualMethods\28-1-VirtualMethods.csproj", "{0BB41E91-4FDE-4130-90AF-E6F47DD2FC3F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "31-1-AbstractClassesAndMethods", "31-1-AbstractClassesAndMethods\31-1-AbstractClassesAndMethods.csproj", "{C8F12D1A-0A1D-48B9-91EB-FED00BB3DCF3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -237,6 +243,18 @@ Global
 		{90D59DDD-3785-421A-BBE2-E5C3E98AB0D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{90D59DDD-3785-421A-BBE2-E5C3E98AB0D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{90D59DDD-3785-421A-BBE2-E5C3E98AB0D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C60EF57D-0CAA-45FF-B125-B7709BBD5232}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C60EF57D-0CAA-45FF-B125-B7709BBD5232}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C60EF57D-0CAA-45FF-B125-B7709BBD5232}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C60EF57D-0CAA-45FF-B125-B7709BBD5232}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BB41E91-4FDE-4130-90AF-E6F47DD2FC3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BB41E91-4FDE-4130-90AF-E6F47DD2FC3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BB41E91-4FDE-4130-90AF-E6F47DD2FC3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BB41E91-4FDE-4130-90AF-E6F47DD2FC3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8F12D1A-0A1D-48B9-91EB-FED00BB3DCF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8F12D1A-0A1D-48B9-91EB-FED00BB3DCF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8F12D1A-0A1D-48B9-91EB-FED00BB3DCF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8F12D1A-0A1D-48B9-91EB-FED00BB3DCF3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
