@@ -85,7 +85,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "28-1-VirtualMethods", "28-1
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "31-1-AbstractClassesAndMethods", "31-1-AbstractClassesAndMethods\31-1-AbstractClassesAndMethods.csproj", "{C8F12D1A-0A1D-48B9-91EB-FED00BB3DCF3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "33-1_Constructors", "33-1_Constructors\33-1_Constructors.csproj", "{B284569F-97EF-47D9-8E3C-03A92AA5C2E1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "33-1_Constructors", "33-1_Constructors\33-1_Constructors.csproj", "{B284569F-97EF-47D9-8E3C-03A92AA5C2E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3-1-DegerReferansTipler", "3-1-DegerReferansTipler\3-1-DegerReferansTipler.csproj", "{816D191F-66BE-452E-9D1A-63FBD0234C9D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -261,6 +263,10 @@ Global
 		{B284569F-97EF-47D9-8E3C-03A92AA5C2E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B284569F-97EF-47D9-8E3C-03A92AA5C2E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B284569F-97EF-47D9-8E3C-03A92AA5C2E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{816D191F-66BE-452E-9D1A-63FBD0234C9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{816D191F-66BE-452E-9D1A-63FBD0234C9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{816D191F-66BE-452E-9D1A-63FBD0234C9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{816D191F-66BE-452E-9D1A-63FBD0234C9D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

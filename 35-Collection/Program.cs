@@ -42,7 +42,7 @@ internal class Program
         // Collection non-generic ve generic olarak iki tipde bulunurlar
         // non-generic collections ,tip bağımlıdırlar
         // ArrayList ; int , string     
-
+        /*
         ArrayList liste = new ArrayList();
         liste.Add(10);
         liste.Add("deneme mesajı");
@@ -112,6 +112,18 @@ internal class Program
         {
             Console.WriteLine(item.Key + " -> "+ item.Value);
         }
+        */
+        //--------------------------------------------------------------------------------------
+
+        // collections ların kullanımı farklı bir kaynaktan basit bir örnek
+        List < customer> customers = new List<customer>();
+        customers.Add(new customer() { id = 1, name = "Deniz" });
+        customers.Add(new customer() { id = 2, name = "Beril" });
+        foreach ( var customer in customers)
+        {
+            Console.WriteLine(customer.id + " " + customer.name);
+        }
+
     }
     class Product
     {
@@ -160,5 +172,11 @@ internal class Program
         {
             return GetEnumerator();
         }
+    }
+
+    class customer
+    {
+        public int id { get; set; }
+        public string name { get; set; }
     }
 }

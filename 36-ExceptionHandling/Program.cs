@@ -40,6 +40,11 @@
             Console.WriteLine(e.Message);
         }
 
+        Console.WriteLine("---------------");
+
+        // parola action delegeasyonu örneği
+        HandleException(()=> ParolaKontrol1(parola));
+
     }
     public static void ParolaKontrol(string password)
     {
@@ -55,6 +60,31 @@
         if (!password.Any(char.IsLetter))
         {
             throw new Exception("parola en az bir rakam içermlidir.");
+        }
+    }
+
+    public static void ParolaKontrol1(string password)
+    {
+        if (password.Length > 8)
+        {
+            //"sistem yapısı hakkında bilgi veren çok önemli ve gizli olması gereken bir hata kodudur örnek :x0x11xx"
+            throw new Exception("x0x11xx");
+
+        }
+    }
+    // Action Delegasyonu
+    private static void HandleException(Action action)
+    {
+        try 
+        {
+            action.Invoke();
+        }
+        catch (Exception e)
+        {
+            if (e.Message == "x0x11xx")
+            {
+                Console.WriteLine("şifreniz 8 karakterden fazla olamaz.");
+            }
         }
     }
 }
